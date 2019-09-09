@@ -1,0 +1,577 @@
+$brownText:#5a4f42; 
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+@mixin css3($property, $value) {
+  @each $prefix in -webkit-, -moz-, '' {
+    #{$prefix}#{$property}: $value;
+  }
+}
+@mixin imgDef {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@mixin fontMincho {
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+  font-size: 2.4rem;
+  text-align: center;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: Arial, Roboto, 游ゴシック, YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+  color: $brownText;
+  background-color: #fff;
+}
+.inner-wrap {
+  width: 640px;
+  max-width: 100%;
+  margin: auto;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      cursor: pointer;
+    }
+}
+.reserve {
+  padding-top: 28px;
+  background-color: #fff;
+  .phone {
+    color: #0070bc;
+    border: solid 1px #0070bc;
+    border-radius: 20px;
+    text-align: center;
+    padding: 18px 0 24px;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    p:first-child {
+      font-size: 2rem;
+    }
+    p:last-child {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-top: 2px;
+      display: inline-block;
+      a {
+        padding: 20px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .banner-img {
+  @include imgDef;
+  margin-top: 30px;
+  }
+  .btn-img {
+    width: 90%;
+    padding: 10px 0;
+    display: block;
+    margin: auto;
+
+  }
+}
+
+// fixed-------------------------------------------------------------------------------
+
+.fixed {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #006fb1;
+  font-size: 1.4rem; 
+  color: #fff;
+  text-align: center;
+  z-index: 10;
+  a {
+    padding: 10px 0;
+    width: 100%;
+    display: block;
+    position: relative;
+    line-height: 1.7;
+    .fa-chevron-up {
+      position: absolute;
+      right: 20px;
+      top: 13px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.page-top {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  z-index: 11;
+  margin-bottom: 10px;
+  img {
+    @include imgDef;
+    width: 35px;
+  }
+}
+
+// header------------------------------------------------------------------------------
+
+header {
+  h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #006faf;
+    text-align: center;
+    font-weight: 500;
+    margin: 10px 5px;
+    padding: 10px;
+    border-radius: 20px;
+    line-height: 1;
+  }
+  .logo-img, video {
+    @include imgDef;
+  }
+}
+
+// top-campaign-------------------------------------------------------------------------
+
+.top-campaign {
+  .campaign-img {
+    @include imgDef;
+    margin-top: 30px;
+  }
+}
+
+// menu---------------------------------------------------------------------------------
+
+.menu {
+  padding: 20px 10px;
+  .menu-title {
+    margin-top: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+  }
+  ul {
+    margin-top: 10px;
+    padding: 15px 20px;
+    border: 1px solid #cecece;
+    li {
+        font-size: 1.4rem;
+        text-decoration: underline;
+        list-style: none;
+        line-height: 2.8rem;
+      }
+    li::before {
+      content: "□ ";
+    }
+  }
+  
+}
+
+// about--------------------------------------------------------------------------------
+
+.about {
+  margin-top: 30px;
+  padding: 0 10px;
+  .about-top-img {
+    @include imgDef;
+  }
+  .list-container {
+    margin-top: 10px;
+    padding: 20px 10px;
+    background-color: #eef1f3;
+    .section-title {
+      @include fontMincho;
+      padding: 12px 0 14px;
+      line-height: 1;
+    }
+    ol {
+      // padding: 10px 5px;
+      background-color: #fff;
+      list-style-position: inside;
+      list-style-type: none;
+      text-align: center;
+      border-radius: 4px;
+      li {
+        font-size: 1.6rem;
+        line-height: 4rem;
+      }
+    }
+  }
+  .temperature {
+    padding: 10px 5px;
+    .temperature-img {
+      @include imgDef;
+      margin-bottom: 20px;
+    }
+    ol {
+      padding: 20px 10px;
+      li {
+        font-size: 1.4rem;
+        list-style-position: inside;
+      }
+    }
+  }
+}
+
+// lesson---------------------------------------------------------------------------
+
+.lesson {
+  padding: 0px 10px;
+  .lessons-introduction {
+    padding: 55px 0 35px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .lessons {
+    // lessons共通---------------------------
+    img {
+      @include imgDef;
+      border-radius: 4px;
+
+    }
+    .lesson-title {
+      padding: 10px 0;
+      font-size: 1.8rem;
+      text-align: center;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.7em;
+    }
+    // ---------------------------------------
+    .col-2 {
+      @include css3(display, flex );
+      @include css3(justify-content, space-between);
+      margin-top: 10px;
+      .col {
+        width: 47%;
+        margin: 1.5%;
+        img {
+          margin-bottom: 10px;
+          display: block;
+        }
+        .lesson-title {
+          margin-bottom: 5px;
+        }
+
+      }
+    }
+  }
+  .container {
+    padding: 10px 5px;
+    img {
+      @include imgDef;
+    }
+    .text {
+      font-size: 1.4rem;
+      padding: 20px 10px;
+      margin: 20px 0 10px;
+      line-height: 1.7;
+    }
+  }
+  .yoga-works {
+    padding-bottom: 20px;
+    h3 {
+      @include fontMincho;
+      color: #fff;
+      background-color: #9fcbd1;
+      font-weight: 400;
+      padding: 10px 5px 5px 25px;
+      margin: 8px 0 20px;
+      line-height: 1.3;
+      width: 100%;
+    }
+    .text {
+      padding: 20px;
+      font-size: 1.4rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    img {
+      @include imgDef;
+    }
+  }
+}
+
+// voice-----------------------------------------------------------------------------
+
+.voice {
+
+  // voice共通---------------------------------------------------------------------
+  .section-title {
+    @include fontMincho;
+    line-height: 1.3;
+    padding: 10px 0;
+  }
+  .client {
+    padding: 20px 10px;
+    img {
+      @include imgDef;
+    }
+  }
+  .instructor {
+    padding: 20px 10px;
+  }
+  // --------------------------------------------------------------------------------
+
+  .message {
+    background-color: #ecf8ff;
+    padding: 10px; 
+    margin-bottom: 20px;
+    .wrapper {
+      img {
+        float: left;
+        width: 90px;
+        margin-right: 14px;
+      }
+      .voice-title {
+        font-size: 2rem;
+        padding: 10px 0 4px;
+        line-height: 1.3;
+        font-weight: 500;
+      }
+      .voice-name {
+        font-size: 1.2rem;
+      }
+    }
+    .accordion {
+      font-family: FontAwesome;
+      font-size: 1.38rem;
+      padding: 0 8px 8px;
+      display: block;
+      clear: both;
+      text-align: center;
+      &::before {
+        font-family: "Font Awesome 5 Pro";
+        font-weight: 900;
+        content: "\f13a";
+
+      }
+    }
+  }
+}
+
+// flow----------------------------------------------------------------------------
+
+.flow {
+  margin-top: 30px;
+  background-color: #eef1f3;
+  .section-title {
+    @include fontMincho;
+    line-height: 1.3;
+    padding: 10px 0;
+    span {
+      font-size: 0.65em;
+      color: #777;
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
+  & > p > img {
+    @include imgDef;
+  }
+  .container {
+    padding: 2% 3%;
+    background-color: #fff;
+    width: 96%;
+    margin: auto;
+    .flow-title {
+      @include fontMincho;
+      margin: 20px 0;
+      line-height: 1.3;
+      text-align: left;
+      span {
+        font-size: 1.4em;
+        margin-right: 10px;
+      }
+    }
+    p {
+      font-size: 1.6rem;
+    }
+    .btn-wrap {
+      @include css3(display, flex);
+      @include css3(justify-content, space-between);
+      img {
+        @include imgDef;
+      }
+    }
+    &:nth-child(3) {
+      position: relative;
+      &::before {
+        content: "";
+        border: 15px solid transparent;
+        border-top: 15px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+      }
+    }
+    &:nth-child(4) {
+      margin-top: 8px;
+      & > p {
+        padding-bottom: 2%;
+      }
+    }
+  }
+  .inner-container {
+    h4 {
+      font-size: 1.6rem;
+      margin: 20px auto;
+      font-weight: 700;
+      background-color: #ab9870;
+      border-radius: 10px;
+      color: #fff;
+      display: table;
+      padding: 10px 20px;
+      line-height: 1.3;
+    }
+    ul {
+      margin: 10px 0 40px;
+      li {
+        font-size: 1.8rem;
+        list-style: none;
+        line-height: 1.5;
+        &::before {
+          content: "・";
+          font-weight: 700;
+        }
+      }
+    }
+    dl {
+      margin-bottom: 40px;
+      dt {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.4;
+        .flow-no {
+          color: #ab9870;
+        }
+      }
+      dd {
+        display: inline-block;
+        font-size: 1.6rem;
+        width: 45%;
+        vertical-align: top;
+        line-height: 1.4;
+        &:nth-child(3) {
+          margin: 1% 2% 0 0;
+        }
+        img {
+          @include imgDef;
+        }
+      }
+    }
+  }
+}
+
+// stutios----------------------------------------------------------------------
+
+.studios {
+  margin-top: 30px;
+  padding: 20px 10px;
+  .section-title {
+    @include fontMincho;
+    line-height: 1.3;
+    padding: 10px 0;
+  }
+  p {
+    font-size: 1.6rem;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  .area {
+    .area-title {
+      font-size: 20px;
+      padding: 20px 0px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .list-box {
+      padding: 10px;
+      &:nth-child(even) {
+        background-color: #f5f5f5;
+      }
+      .flex {
+        @include css3(display, flex );
+        @include css3(justify-content, space-between );
+        .name {
+          padding: 6px 0 10px;
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin: 0;
+        }
+        ul {
+          padding-right: 30px;
+          li {
+            list-style: none;
+            display: inline-block;
+            text-align: center;
+            margin-right: 3px;
+            }
+            a {
+              display: inline-block;
+              padding: 5px 7.5px;
+              color: #fff;
+              font-size: 1.2rem;
+              background-color: #78b3d6;
+              width: 53px;
+              line-height: 1.5;
+              border: 1px solid transparent;
+              border-radius: 3px;
+              &:hover {
+                background-color: #31b0d5;
+              }
+            }
+            li:nth-child(3) a {
+            background-color: #007ec8;
+            &:hover {
+              color: #333;
+            }
+          }
+        }
+      }
+      .address {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+// bottom-campaign-------------------------------------------------------------------
+
+.bottom-campaign {
+  .campaign-img {
+    @include imgDef;
+  }
+}
+
+// footer-----------------------------------------------------------------------------
+
+footer {
+  .copyright {
+    font-size: 1rem;
+    padding: 20px 10px;
+    margin: 10px;
+    text-align: center;
+  }
+  .footer-logo {
+    @include imgDef;
+    width: 125px;
+    margin: 0 auto 10px;
+  }
+}
+
+
+
